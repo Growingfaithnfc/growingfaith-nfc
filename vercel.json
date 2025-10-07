@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "functions": {
+    "api/nfc/*.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/$",
+      "status": 308,
+      "headers": {
+        "Location": "/nfc"
+      }
+    },
+    {
+      "src": "/nfc/?",
+      "dest": "/api/nfc/index.js"
+    },
+    {
+      "src": "/nfc/(.*)",
+      "dest": "/api/nfc/$1.js"
+    }
+  ]
+}
